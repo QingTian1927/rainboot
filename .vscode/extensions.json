@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "editorconfig.editorconfig",
+        "dbaeumer.vscode-eslint",
+        "pedroazevedo.nestjs-route-list",
+        "esbenp.prettier-vscode",
+        "streetsidesoftware.code-spell-checker",
+        "aaron-bond.better-comments",
+    ]
+}

@@ -1,0 +1,87 @@
+# ===============================
+# Node / pnpm
+# ===============================
+node_modules/
+.pnpm-store/
+.pnp/
+pnpm-lock.yaml
+
+# ===============================
+# Environment Files
+# ===============================
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+
+# ===============================
+# Next.js
+# ===============================
+.next/
+out/
+build/
+dist/
+*.log
+
+# ===============================
+# NestJS
+# ===============================
+dist/
+coverage/
+tmp/
+*.tsbuildinfo
+
+# ===============================
+# Editor / OS Files
+# ===============================
+.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Docker
+# ===============================
+docker-compose.override.yml
+*.dockerfile
+*.log
+docker-compose.override.yml
+docker-compose.override.*.yml
+**/tmp/
+**/cache/
+
+# ===============================
+# Redis (Upstash / local cache)
+# ===============================
+*.rdb
+*.aof
+
+# ===============================
+# Logs
+# ===============================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===============================
+# Testing / Coverage
+# ===============================
+coverage/
+jest/
+nyc_output/
+.vitest/
+
+# ===============================
+# Build / Generated Assets
+# ===============================
+dist/
+build/
+out/
+public/build/
+.cache/
+.tmp/
