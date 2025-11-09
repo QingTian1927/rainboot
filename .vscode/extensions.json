@@ -6,5 +6,7 @@
         "esbenp.prettier-vscode",
         "streetsidesoftware.code-spell-checker",
         "aaron-bond.better-comments",
+        "bradlc.vscode-tailwindcss",
+        "austenc.tailwind-docs",
     ]
 }
