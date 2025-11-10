@@ -1,0 +1,24 @@
+{
+  "name": "rainboot",
+  "version": "1.0.0",
+  "description": "Personal finance tracker and budgeting app for Vietnamese market",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --parallel --filter \"./apps/**\" dev",
+    "build": "pnpm --filter @rainboot/shared build && pnpm --filter @rainboot/backend build && pnpm --filter @rainboot/frontend build",
+    "build:shared": "pnpm --filter @rainboot/shared build",
+    "build:backend": "pnpm --filter @rainboot/shared build && pnpm --filter @rainboot/backend build",
+    "build:frontend": "pnpm --filter @rainboot/shared build && pnpm --filter @rainboot/frontend build",
+    "lint": "pnpm --parallel --filter \"./apps/**\" --filter \"./packages/**\" lint",
+    "clean": "pnpm --parallel --filter \"./apps/**\" --filter \"./packages/**\" clean",
+    "test": "pnpm --parallel --filter \"./apps/**\" test"
+  },
+  "keywords": [],
+  "author": "rainboot team",
+  "license": "GPL-3.0-only",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "packageManager": "pnpm@10.20.0"
+}

@@ -45,10 +45,8 @@ Thumbs.db
 # Docker
 # ===============================
 docker-compose.override.yml
-*.dockerfile
-*.log
-docker-compose.override.yml
 docker-compose.override.*.yml
+*.log
 **/tmp/
 **/cache/
 

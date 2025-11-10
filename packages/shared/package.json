@@ -1,0 +1,19 @@
+{
+  "name": "@rainboot/shared",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [],
+  "author": "rainboot team",
+  "license": "GPL-3.0-only",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
