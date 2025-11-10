@@ -6,23 +6,28 @@ services:
     build:
       context: ..
       dockerfile: ./docker/dockerfiles/frontend.Dockerfile
+      target: development
     ports:
       - "3000:3000"
     environment:
       - NODE_ENV=development
       - NEXT_PUBLIC_API_URL=http://backend:4000
     volumes:
-      # - ../apps/frontend:/app/apps/frontend
+      - ../apps/frontend:/app/apps/frontend
+      - ../packages/shared:/app/packages/shared
       - /app/node_modules
       - /app/apps/frontend/node_modules
+      - /app/packages/shared/node_modules
     depends_on:
       - backend
+    command: pnpm --filter @rainboot/frontend dev
 
   backend:
     container_name: rainboot_backend
     build:
       context: ..
       dockerfile: ./docker/dockerfiles/backend.Dockerfile
+      target: development
     ports:
       - "4000:4000"
     environment:
@@ -31,11 +36,14 @@ services:
       - SUPABASE_KEY=${SUPABASE_KEY}
       - REDIS_URL=redis://redis:6379
     volumes:
-      # - ../apps/backend:/app/apps/backend
+      - ../apps/backend:/app/apps/backend
+      - ../packages/shared:/app/packages/shared
       - /app/node_modules
       - /app/apps/backend/node_modules
+      - /app/packages/shared/node_modules
     depends_on:
       - redis
+    command: pnpm --filter @rainboot/backend dev
 
   redis:
     container_name: rainboot_redis

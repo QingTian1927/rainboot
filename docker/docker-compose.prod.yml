@@ -1,0 +1,46 @@
+name: rainboot-prod
+
+services:
+  frontend:
+    container_name: rainboot_frontend_prod
+    build:
+      context: ..
+      dockerfile: ./docker/dockerfiles/frontend.Dockerfile
+      target: production
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=http://backend:4000
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  backend:
+    container_name: rainboot_backend_prod
+    build:
+      context: ..
+      dockerfile: ./docker/dockerfiles/backend.Dockerfile
+      target: production
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_KEY=${SUPABASE_KEY}
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  redis:
+    container_name: rainboot_redis_prod
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data_prod:/data
+    restart: unless-stopped
+
+volumes:
+  redis_data_prod:
