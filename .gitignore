@@ -4,7 +4,6 @@
 node_modules/
 .pnpm-store/
 .pnp/
-pnpm-lock.yaml
 
 # ===============================
 # Environment Files
