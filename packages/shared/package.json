@@ -14,6 +14,7 @@
   "author": "rainboot team",
   "license": "GPL-3.0-only",
   "devDependencies": {
+    "supabase": "^2.58.5",
     "typescript": "^5.0.0"
   }
 }
